@@ -11,7 +11,7 @@ export default function ProtectedRoute({ allowedRole }) {
 
   // If a specific role is required (e.g. allowedRole = true means 'admin' required)
   if (allowedRole === true && role !== 'admin') {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/user" replace />;
   }
 
   return <Outlet />;
