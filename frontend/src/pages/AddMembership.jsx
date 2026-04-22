@@ -61,8 +61,8 @@ export default function AddMembership() {
 
   if (success) {
     return (
-      <div className="max-w-2xl mx-auto mt-10">
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-lg text-center py-16 px-8 relative overflow-hidden">
+      <div className="max-w-2xl mx-auto mt-6 sm:mt-10">
+        <div className="bg-white rounded-3xl border border-slate-200 shadow-lg text-center py-12 sm:py-16 px-6 sm:px-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
           <div className="mx-auto flex items-center justify-center h-24 w-24 rounded-full bg-emerald-100 mb-8 animate-bounce">
             <CheckCircle className="h-12 w-12 text-emerald-600" />
@@ -79,26 +79,26 @@ export default function AddMembership() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto space-y-6 pb-8">
-      <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+    <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6 pb-8">
+      <div className="flex items-center gap-3 sm:gap-4 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-sm">
         <button onClick={() => navigate(-1)} className="p-2 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors shadow-sm">
           <ArrowLeft className="h-5 w-5" />
         </button>
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Add New Membership</h1>
-          <p className="text-slate-500 text-sm font-medium mt-1">Register a new user and generate their invoice automatically.</p>
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Add New Membership</h1>
+          <p className="text-slate-500 text-xs sm:text-sm font-medium mt-1">Register a new user and generate their invoice automatically.</p>
         </div>
       </div>
 
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="bg-slate-50/50 p-4 sm:p-5 border-b border-slate-100 flex items-center gap-3">
-          <div className="bg-blue-100 p-2.5 rounded-xl">
-            <Shield className="h-6 w-6 text-blue-600" />
+        <div className="bg-slate-50/50 p-3 sm:p-4 sm:p-5 border-b border-slate-100 flex items-center gap-3">
+          <div className="bg-blue-100 p-2 sm:p-2.5 rounded-xl">
+            <Shield className="h-5 sm:h-6 w-5 sm:w-6 text-blue-600" />
           </div>
-          <h2 className="text-xl font-bold text-slate-900">Member Details</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-slate-900">Member Details</h2>
         </div>
         
-        <form onSubmit={handleSubmit} className="p-4 sm:p-5 space-y-6">
+        <form onSubmit={handleSubmit} className="p-3 sm:p-4 sm:p-5 space-y-5 sm:space-y-6">
           {error && (
             <div className="p-5 bg-rose-50 text-rose-700 rounded-2xl border border-rose-100 text-sm font-semibold flex items-center gap-3">
               <div className="bg-white p-1 rounded-full"><AlertCircle className="h-5 w-5" /></div>
@@ -106,7 +106,7 @@ export default function AddMembership() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             <div className="space-y-2">
               <label className="text-sm font-bold text-slate-700 ml-1">Membership Number *</label>
               <input
@@ -236,7 +236,7 @@ export default function AddMembership() {
             </div>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-end gap-3">
+          <div className="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-end gap-3">
             <button type="button" onClick={() => navigate(-1)} className="btn-secondary rounded-lg py-3 px-5 font-bold text-sm w-full sm:w-auto border-2">
               Cancel
             </button>

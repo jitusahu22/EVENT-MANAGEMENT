@@ -43,12 +43,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       {/* Header */}
-      <header className="py-5 px-6 sm:px-10 border-b border-gray-200/60 bg-white/80 backdrop-blur-md sticky top-0 z-50 flex items-center justify-between">
+      <header className="py-4 sm:py-5 px-4 sm:px-6 lg:px-10 border-b border-gray-200/60 bg-white/80 backdrop-blur-md sticky top-0 z-50 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img src="/logo.png" alt="TechEvent Logo" className="h-15 object-contain mix-blend-multiply" />
 
         </div>
-        <Link to="/login" className="btn-primary rounded-full px-6 shadow-md hover:shadow-lg">
+        <Link to="/login" className="btn-primary rounded-full px-4 sm:px-6 py-2 shadow-md hover:shadow-lg text-sm sm:text-base">
           Sign In
         </Link>
       </header>
@@ -67,12 +67,12 @@ export default function Home() {
               TechEvent OS v2.0 is now live
             </div>
              */}
-            <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 sm:mb-8 leading-[1.1]">
               The intelligent operating <br className="hidden md:block" />
               system <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">for technical events.</span>
             </h1>
             
-            <p className="mt-6 max-w-2xl text-xl text-slate-600 mx-auto mb-12 leading-relaxed">
+            <p className="mt-4 sm:mt-6 max-w-2xl text-lg sm:text-xl text-slate-600 mx-auto mb-8 sm:mb-12 leading-relaxed">
               A powerful, secure SaaS platform designed to streamline membership management, automate financial tracking, and deliver real-time operational analytics.
             </p>
             
@@ -83,7 +83,7 @@ export default function Home() {
               </Link>
             </div>
             
-            <div className="mt-12 flex justify-center items-center gap-8 text-sm text-slate-500 font-medium">
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-xs sm:text-sm text-slate-500 font-medium">
               <div className="flex items-center gap-2"><CheckCircle2 className="h-5 w-5 text-emerald-500"/> No credit card required</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="h-5 w-5 text-emerald-500"/> 14-day free trial</div>
             </div>
@@ -117,12 +117,12 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-24 bg-slate-900 relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-slate-900 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-indigo-900/20"></div>
           <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Ready to streamline your events?</h2>
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Join the platform and experience the future of technical event management today.</p>
-            <Link to="/login" className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-bold text-slate-900 hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:scale-105">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight">Ready to streamline your events?</h2>
+            <p className="text-lg sm:text-xl text-slate-300 mb-6 sm:mb-10 max-w-2xl mx-auto">Join the platform and experience the future of technical event management today.</p>
+            <Link to="/login" className="inline-flex items-center justify-center rounded-xl bg-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-slate-900 hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:scale-105 w-full sm:w-auto">
               Sign In to Workspace
             </Link>
           </div>

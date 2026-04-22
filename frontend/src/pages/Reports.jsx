@@ -47,12 +47,15 @@ export default function Reports() {
           <style>
             body { font-family: Arial, sans-serif; padding: 40px; }
             h1 { color: #1e293b; }
-            .metric { display: inline-block; margin: 20px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; }
+            .metric { display: inline-block; margin: 20px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; min-width: 200px; }
             .metric-value { font-size: 24px; font-weight: bold; color: #1e293b; }
             .metric-label { font-size: 14px; color: #64748b; }
             table { width: 100%; border-collapse: collapse; margin-top: 30px; }
             th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
             th { background: #f8fafc; }
+            @media print {
+              body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            }
           </style>
         </head>
         <body>
@@ -97,10 +100,16 @@ export default function Reports() {
       </html>
     `;
 
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write(printContent);
-    printWindow.document.close();
-    printWindow.print();
+    const blob = new Blob([printContent], { type: 'text/html' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', `report_${new Date().toISOString().split('T')[0]}.html`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   if (loading) {

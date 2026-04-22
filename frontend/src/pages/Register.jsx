@@ -70,15 +70,15 @@ export default function Register() {
       </div>
 
       {/* Back Button */}
-      <Link to="/" className="absolute top-8 left-8 z-20 flex items-center px-4 py-2 bg-white/50 backdrop-blur-md border border-slate-200/50 rounded-full text-slate-600 hover:text-slate-900 font-bold text-sm transition-all shadow-sm hover:shadow-md group">
+      <Link to="/" className="absolute top-4 sm:top-8 left-4 sm:left-8 z-20 flex items-center px-3 sm:px-4 py-2 bg-white/50 backdrop-blur-md border border-slate-200/50 rounded-full text-slate-600 hover:text-slate-900 font-bold text-xs sm:text-sm transition-all shadow-sm hover:shadow-md group">
         <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
         Back to Platform
       </Link>
 
-      <div className="max-w-md w-full px-4 relative z-10">
+      <div className="max-w-md w-full px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Create account
           </h2>
           <p className="mt-3 text-base text-slate-500 font-medium">
@@ -87,7 +87,7 @@ export default function Register() {
         </div>
 
         {/* Register Form */}
-        <div className="bg-white/80 backdrop-blur-xl p-8 sm:p-10 rounded-3xl shadow-2xl shadow-slate-200/50 border border-slate-100">
+        <div className="bg-white/80 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-3xl shadow-2xl shadow-slate-200/50 border border-slate-100">
           <form className="space-y-5" onSubmit={handleSubmit}>
 
             {error && (

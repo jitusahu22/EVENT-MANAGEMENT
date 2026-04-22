@@ -92,7 +92,7 @@ export default function Maintenance() {
   };
 
   return (
-    <div className="space-y-8 pb-10">
+    <div className="space-y-6 sm:space-y-8 pb-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
         <div>
           <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Maintenance Module</h1>
@@ -106,7 +106,7 @@ export default function Maintenance() {
 
       {/* Add/Edit Maintenance Record */}
       <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+        <div className="p-4 sm:p-6 lg:p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <div>
             <h2 className="text-xl font-bold text-slate-900">{editMode ? 'Edit Maintenance Task' : 'Create Maintenance Task'}</h2>
             <p className="text-sm text-slate-500 mt-1">{editMode ? 'Update the maintenance record details.' : 'Add a new maintenance record to track system updates.'}</p>
@@ -120,9 +120,9 @@ export default function Maintenance() {
             </button>
           )}
         </div>
-        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 lg:p-8 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div className="space-y-2 md:col-span-2">
               <label className="text-sm font-bold text-slate-700 ml-1">Description *</label>
               <textarea
                 required
@@ -160,7 +160,7 @@ export default function Maintenance() {
               </div>
             </div>
           </div>
-          <div className="flex justify-end">
+          <div className="flex flex-col sm:flex-row justify-end gap-3">
             <button
               type="submit"
               disabled={submitting}
@@ -175,11 +175,11 @@ export default function Maintenance() {
 
       {/* Maintenance Records List */}
       <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50/50">
+        <div className="p-4 sm:p-6 lg:p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <h2 className="text-xl font-bold text-slate-900">Maintenance Records</h2>
           <p className="text-sm text-slate-500 mt-1">Track all system maintenance activities.</p>
         </div>
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-6 lg:p-8">
           {loading ? (
             <div className="flex justify-center items-center py-12">
               <Loader2 className="animate-spin h-8 w-8 text-blue-600" />
@@ -197,7 +197,7 @@ export default function Maintenance() {
                 const StatusIcon = status.icon;
                 return (
                   <div key={record.id} className="p-5 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-white hover:shadow-md transition-all">
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold capitalize ${status.bg} ${status.color}`}>
@@ -214,7 +214,7 @@ export default function Maintenance() {
                           {new Date(record.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex sm:items-center gap-2 mt-3 sm:mt-0">
                         <button
                           onClick={() => handleEdit(record)}
                           className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-all"

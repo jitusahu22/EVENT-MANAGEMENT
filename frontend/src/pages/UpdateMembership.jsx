@@ -70,7 +70,7 @@ export default function UpdateMembership() {
       `}</style>
 
       {/* Header */}
-      <div className="flex items-center gap-4 rounded-2xl p-4" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+      <div className="flex items-center gap-3 sm:gap-4 rounded-2xl p-3 sm:p-4" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
         <button onClick={() => navigate(-1)} className="p-2 rounded-xl hover:bg-slate-100 transition-colors text-slate-500">
           <ArrowLeft className="h-5 w-5" />
         </button>
@@ -83,7 +83,7 @@ export default function UpdateMembership() {
       {/* Search */}
       <div className="rounded-2xl p-5" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}>
         <label className="text-xs font-bold text-slate-600 mb-2 block">Membership Number</label>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
             <input
@@ -124,7 +124,7 @@ export default function UpdateMembership() {
       {membership && (
         <div className="rounded-2xl overflow-hidden" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}>
           {/* Card Header */}
-          <div className="p-5 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+          <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3" style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(79,70,229,0.1), rgba(124,58,237,0.1))' }}>
                 <UserCheck className="h-5 w-5" style={{ color: '#6366f1' }} />
@@ -141,7 +141,7 @@ export default function UpdateMembership() {
 
           {/* Details Grid */}
           <div className="p-5">
-            <div className="grid grid-cols-2 gap-1 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 mb-5">
               {[
                 { label: 'Email', value: membership.email },
                 { label: 'Phone', value: membership.phone },
@@ -169,7 +169,7 @@ export default function UpdateMembership() {
             </div>
 
             {/* Actions */}
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 disabled={actionLoading || membership.status === 'cancelled'}
                 onClick={() => handleUpdate('extend')}
